@@ -5,6 +5,11 @@ html转换成wxml适配微信小程序
 ##use
 	npm install htmltowxml --save
 
+```javascript
+import {html2wxml} from 'htmltowxml';
+html2wxml('./rocker.html', './index.wxml');
+```
+
 ##test
 	npm install
 	npm build
