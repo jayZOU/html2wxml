@@ -1,0 +1,102 @@
+<view class="wrap div">
+  <view class="mask div">
+    <view class="over-wrap div">
+      <view class="over-text div">
+        <text>游戏结束231231</text>
+      </view>
+      <view class="table">
+        <view class="tr">
+          <view class="td">
+            <text>最后得分：</text>
+          </view>
+          <view class="yellow td"></view>
+        </view>
+        <view class="tr">
+          <view class="td">
+            <text>得到红包：</text>
+          </view>
+          <view class="orange td"></view>
+        </view>
+      </view>
+      <view class="hb-tips p">
+        <text>请留意红包消息，实际金额以收到的为准。</text>
+      </view>
+      <view class="btn btn-index a">
+        <text>返回首页</text>
+      </view>
+      <view class="btn btn-hb a">
+        <text>再来</text>
+        <view class="span"></view>
+      </view>
+    </view>
+  </view>
+  <view class="mask div">
+    <view class="guide-text div">
+      <text>移动原点控制飞机方向</text>
+    </view>
+    <view class="guide-text guide-text2 div">
+      <text>点击按钮进入无敌状态</text>
+    </view>
+  </view>
+  <view class="mask error div">
+    <view class="error-wrap div">
+      <view class="error-text div"></view>
+    </view>
+  </view>
+  <view class="mask div">
+    <view class="loading p">
+      <text>页面加载中…</text>
+    </view>
+  </view>
+  <view class="header header">
+    <view class="item item-life div">
+      <view class="item-name p">
+        <text>生命值</text>
+      </view>
+      <view class="value div">
+        <view class="prog-wrap div">
+          <view class="prog div"></view>
+        </view>
+        <view class="span"></view>
+      </view>
+    </view>
+    <view class="item item-score div">
+      <view class="item-name p">
+        <text>当前得分</text>
+      </view>
+      <view class="value div">
+        <view class="span"></view>
+      </view>
+    </view>
+    <view class="item item-hb div">
+      <view class="item-name p">
+        <text>得到红包</text>
+      </view>
+      <view class="value div">
+        <view class="span"></view>
+      </view>
+    </view>
+  </view>
+  <view class="area div"></view>
+  <view class="area area-visual div">
+    <view class="dot-wrap div">
+      <view class="dot div"></view>
+    </view>
+  </view>
+  <view class="function div">
+    <view class="yellow div">
+      <text>还需冷却：</text>
+      <view class="span"></view>
+    </view>
+    <view class="yellow div">
+      <text>buff时间：</text>
+      <view class="span"></view>
+    </view>
+    <view class="yellow buff-text div">
+      <text>当前无敌buff数：</text>
+      <view class="span"></view>
+    </view>
+    <view class="btn a"></view>
+  </view>
+  <view class="footer footer"></view>
+</view>
