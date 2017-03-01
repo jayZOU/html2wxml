@@ -5,7 +5,7 @@
   "main": "./dist/htmltowxml.js",
   "scripts": {
     "dev": "rollup -c --watch",
-    "build": "rollup -c",
+    "build": "babel-node rollup.build.js",
     "test": "mocha --require babel-polyfill --compilers js:babel-register"
   },
   "repository": {
@@ -39,7 +39,8 @@
   "dependencies": {
     "babel-loader": "^6.3.2",
     "chai": "^3.5.0",
-    "html": "^1.0.0",
+    "rollup": "^0.41.4",
+    "rollup-plugin-uglify": "^1.0.1",
     "rollup-watch": "^3.2.2"
   }
 }

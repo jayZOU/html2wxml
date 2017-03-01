@@ -6,7 +6,7 @@ export default {
     sourceMap: true,
 	useStrict: false,
     plugins: [ 
-    	buble() 
+    	buble()
     ],
     targets: [
     	{
@@ -25,10 +25,5 @@ export default {
 	    	format: 'iife',
 	    	dest: './dist/htmltowxml.global.js',
 	    }
-    ],
-    external: ['html'],
-
-    globals: {
-    	html: 'html'
-    }
+    ]
 };
