@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import {html2wxml} from '../dist/htmltowxml';
+import {html2wxml} from '../src/htmltowxml';
 
 
 describe('html2wxml()', () => {
