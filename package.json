@@ -1,5 +1,5 @@
 {
-  "name": "html2wxml",
+  "name": "htmltowxml",
   "version": "1.0.3",
   "description": "convert html to wxml",
   "main": "./dist/htmltowxml.js",
