@@ -27,6 +27,7 @@ console.log(wxml);
 
 ##test
   npm i
+  
   npm test
 
 ##License
