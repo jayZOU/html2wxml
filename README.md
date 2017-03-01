@@ -1,4 +1,5 @@
 #html2wxml
+![build](https://api.travis-ci.org/jayZOU/html2wxml.svg?branch=master)
 **convert html to wxml**	
 html转换成wxml适配微信小程序
 
