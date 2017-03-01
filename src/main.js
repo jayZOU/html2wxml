@@ -1,62 +1,59 @@
-import {html2json} from '../libs/html2json';
-import fs from 'fs';
-import formatHtml from 'html';
+import {html2wxml} from './htmltowxml';
+import { style_html } from '../libs/html';
 
-let parse = ``;
-let part = ``;
+const htmlText = document.getElementById('html');
+const wxmlText = document.getElementById('wxml');
+const cover = document.getElementById('cover');
+// test('a');
+// console.log(test(a));
+// console.log(htmlText.value)
 
-export const html2wxml  = function(input, output = './index.wxml'){
-	if(!!input) new TypeError('please input file path!!!')
+console.log(html2wxml('<div>I am<div>I am test</div><img src="/img/a.jpg"> test</div>'));
+// console.log(html2wxml('<img src="/img/a.jpg">'));
 
-	readFile(input)
-		.then((value) => {
-			return html2json(value).child;
-		})
-		.then((htmlToJson) => {
-			for(let i = 0, len = htmlToJson.length; i < len; i++){
-				parse = parseChild2(htmlToJson[i]);
-			}
+cover.addEventListener('click', function(){
+	const wxmlDom = html2wxml(htmlText.value);
 
-			let prettyData = formatHtml.prettyPrint(parse, {indent_size: 2});
-			fs.writeFileSync('./dist/index.wxml', prettyData, 'utf-8');
-			console.log('conver success');
-		})
-		.catch((err) => {
-			console.log(err);
-		}) 
-}
+	console.log(wxmlDom);
 
+	let prettyData = style_html(wxmlDom, {
+	    indent_size: 2
+	});
+	if(wxmlDom){
 
-function parseChild2(node){
-	if(node.child){
-		part += `<view class="${node.attr.class}">`;
-		for(let i = 0, len = node.child.length; i < len; i++){
-			if(node.node == 'element') parseChild2(node.child[i]);
-		}
-		part += `</view>`;
-	}else{
-		if(node.node == 'element') part += `<view class="${node.attr.class}"></view>`
-		if(node.node == 'text') part += `<text>${node.text}</text>`;
+		// console.log(prettyData);
+
+		wxmlText.innerHTML = html_encode(prettyData);
+		// wxmlText.value = wxmlDom;
+		// hljs.highlightBlock(wxmlDom);
+		// $('pre code').each(function(i, block) {
+		//     hljs.highlightBlock(block);
+		// });
 	}
-		return part
+
+
+},false);
+
+function html_encode(str) {
+    var s = "";
+    if (str.length == 0) return "";
+    s = str.replace(/&/g, "&gt;");
+    s = s.replace(/</g, "&lt;");
+    s = s.replace(/>/g, "&gt;");
+    s = s.replace(/ /g, "&nbsp;");
+    s = s.replace(/\'/g, "&#39;");
+    s = s.replace(/\"/g, "&quot;");
+    s = s.replace(/\n/g, "<br>");
+    return s;
 }
 
-function readFile(URL) {
-	return new Promise((resolve, reject) => {
-		fs.readFile(URL, 'utf8', (err, data) => {
-			if(err) reject(err);
-			resolve(data);
-		})
-	})
-}
+// console.log();
 
-
-// tidy(parse, (err, html) => {
-// 	console.log(html);
-// 	fs.writeFileSync('./index.wxml', html, 'utf-8');
-// });
-
-
-// console.log(parse);
-
-// console.log(htmlToJson);
+// export default html2wxml;
+// var html2wxml = require('../dist/main');
+// module.exports = {
+// 	html2wxml: html2wxml
+// }
+// console.log(html2wxml);
+// console.log(html2wxml);
+// html2wxml('./rocker.html');
